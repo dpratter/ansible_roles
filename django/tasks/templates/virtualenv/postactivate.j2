@@ -1,0 +1,7 @@
+#!/bin/sh
+
+{% for variable_name, value in virtualenv_env.iteritems() %}
+export {{ variable_name }}="{{ value }}"
+{% endfor %}
+
+cd {{ synced_folder }}

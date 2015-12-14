@@ -34,7 +34,7 @@ service_user: "root"
 service_group: "root"
 
 # path to code root, where the django project code lives
-source_path: "/vagrant"
+source_path: "{{ synced_folder }}"
 source_media_path: "{{ source_path }}/public/media"
 
 venvs_path: "/var/virtualenvs"
@@ -123,6 +123,12 @@ celery_default_queue: "{{ service_name }}"
 
 # additional key/value pairs to add to secret.py
 more_secrets: {}
+
+
+### environment
+
+virtualenv_env:
+  DJANGO_SETTINGS_MODULE: "{{ django_settings_module }}"
 
 
 ### settings for the commands tasks
