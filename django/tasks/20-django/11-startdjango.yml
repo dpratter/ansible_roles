@@ -11,10 +11,3 @@
 - name: create new django project from template
   shell: >
     {{ virtualenv_path }}/bin/python -m django startproject --template={{ django_project_template }} {{ service_name }} {{ source_path }}
-
-- name: make manage.py executeable
-  file: >
-    path="{{ source_path }}/manage.py"
-    owner={{ service_user }}
-    group={{ service_group }}
-    mode=0755
