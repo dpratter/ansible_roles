@@ -29,6 +29,12 @@
     - libjpeg8-dev
   when: support_pillow
 
+- name: install library headers for cffi support
+  apt: name={{ item }} state=latest update_cache=yes cache_valid_time=600
+  with_items:
+    - libmagickwand-dev
+  when: support_wand
+
 - name: install library headers for lxml
   apt: name={{ item }} state=latest update_cache=yes cache_valid_time=600
   with_items:

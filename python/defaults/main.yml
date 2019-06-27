@@ -19,6 +19,7 @@ support_django: True
 support_cryptography: True
 # install image processing libraries
 support_pillow: False
+support_wand: False  # for GIF processing
 # install lxml headers
 support_lxml: False
 # install mysql client headers (not a database server!)
