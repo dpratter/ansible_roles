@@ -29,7 +29,7 @@
     - libjpeg8-dev
   when: support_pillow
 
-- name: install library headers for cffi support
+- name: install library headers for wand (gif image manipulation)
   apt: name={{ item }} state=latest update_cache=yes cache_valid_time=600
   with_items:
     - libmagickwand-dev
